@@ -2,67 +2,69 @@
 const videoFeedData = [
   {
     videoSrc: "video1.mp4",
-    title: "May 28, 2025",
-    description: "Joël Le Scouarnec, a former surgeon in France, confessed to abusing at least 299 people, mostly children, and was sentenced to 20 years in prison.",
+    title: "June 17, 2025",
+    description: "President Trump has lumped together violent and peaceful protesters when speaking about the demonstrations in Los Angeles.",
     isAd: false
   },
   {
     videoSrc: "video2.mp4",
-    title: "May 28, 2025",
-    description: "McCormick Place, a convention center in Chicago, went from being a killer of migratory birds to a success story.",
+    title: "June 16, 2025",
+    description: "President Trump appointed Amy Coney Barrett to the Supreme Court to clinch a conservative legal revolution.",
     isAd: false
   },
   {
     videoSrc: "video3.mp4",
-    title: "May 28, 2025",
-    description: "The latest flight of SpaceX's Starship, the largest and most powerful rocket ever built, got all the way up to space, but not all the way back down to Earth.",
+    title: "June 15, 2025",
+    description: "McCormick Place, a convention center in Chicago, went from being a killer of migratory birds to a success story. Our reporter explains how.",
     isAd: false
   },
   {
     videoSrc: "video4.mp4",
-    title: "May 28, 2025",
-    description: "China and US tariff war",
+    title: "June 15, 2025",
+    description: "In Little Tokyo, business owners and locals feel conflicted, frustrated by protest cleanup but in solidarity with the anti-immigration raid cause.",
     isAd: false
   },
   {
     videoSrc: "video5.mp4",
-    title: "May 27, 2025",
+    title: "June 14, 2025",
     description: "Here are four summer books our editors are looking forward to.",
     isAd: false
   },
   {
     videoSrc: "ad.mp4",
     adMessage: "That's his name: Stitch! 💙 Lilo And Stitch is now playing in theaters!",
+    adLogo: "disney-logo.png",
+    adLabel: "AD",
     isAd: true
   },
   {
     videoSrc: "video6.mp4",
-    title: "May 23, 2025",
-    description: "For decades, research showed that the way people experienced happiness across their lifetimes looked like a U-shaped curve: Happiness tended to be high when they were young, then dipped in midlife, only to rise again as they grew old.",
+    title: "June 15, 2025",
+    description: "For decades, research showed that happiness tended to be high when they were young, then dipped in midlife, only to rise again as they grew old.",
     isAd: false
   },
   {
     videoSrc: "video7.mp4",
-    title: "May 26, 2025",
-    description: "As President Trump blurs the lines between politics and business, and threatens steep tariffs, governments feel compelled to favor Trump-related projects.",
+    title: "June 12, 2025",
+    description: "Restaurant-worthy chicken at home?",
     isAd: false
   },
   {
     videoSrc: "video8.mp4",
-    title: "May 25, 2025",
-    description: "Donald Trump has reordered America's political divide both geographically and demographically.",
+    title: "June 15, 2025",
+    description: "Smart leak detectors could save you thousands of dollars worth of damage by sensing a leak before it becomes a disaster.",
     isAd: false
   },
   {
     videoSrc: "video9.mp4",
-    title: "May 23, 2025",
-    description: "Jeff Goldblum's new album features his 'Wicked' co-stars Ariana Grande and Cynthia Erivo.",
+    title: "June 10, 2025",
+    description: "Jeff Goldblum's new album features his \"Wicked\" co-stars Ariana Grande and Cynthia Erivo.",
     isAd: false
   },
   {
     videoSrc: "video10.mp4",
-    title: "May 22, 2025",
-    description: "For years, Russia used Brazil as a launchpad for its most elite intelligence officers.",
+    title: "June 13, 2025",
+    description: "How does the NBA draft lottery actually work?",
     isAd: false
   }
 ];
