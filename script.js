@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const blackBar = adContainer.querySelector('.ad-black-bar');
         if (blackBar) blackBar.style.display = 'none';
         const adInner = adContainer.querySelector('.ad-video-inner');
-        if (adInner) adInner.style.height = '100vh';
+        if (adInner) adInner.style.height = '100dvh';
         unlockAdSwipe();
       } else {
         unlockAdSwipe();
@@ -527,7 +527,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const blackBar = adContainer.querySelector('.ad-black-bar');
       if (blackBar) blackBar.style.display = 'none';
       const adInner = adContainer.querySelector('.ad-video-inner');
-      if (adInner) adInner.style.height = '100vh';
+      if (adInner) adInner.style.height = '100dvh';
       unlockAdSwipe();
     } else {
       unlockAdSwipe();
@@ -608,18 +608,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // If ad has been shown before, hide black bar and use full height
     if (adHasBeenShown) {
       const blackBar = adContainer.querySelector('.ad-black-bar');
-      if (blackBar) blackBar.style.display = 'none';
+      if (blackBar) {
+        blackBar.style.display = 'none';
+        blackBar.style.cursor = 'default';
+      }
       const adInner = adContainer.querySelector('.ad-video-inner');
-      if (adInner) adInner.style.height = '100vh';
-      // Also ensure overlay is at the bottom of the full-height video
+      if (adInner) {
+        // Use pixel height for better simulator compatibility
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        adInner.style.height = `${viewportHeight}px`;
+      }
       return;
     }
     adHasBeenShown = true;
     // Show black bar and set ad container to short height
     const blackBar = adContainer.querySelector('.ad-black-bar');
-    if (blackBar) blackBar.style.display = 'flex';
+    if (blackBar) {
+      blackBar.style.display = 'flex';
+      blackBar.style.cursor = 'default';
+    }
     const adInner = adContainer.querySelector('.ad-video-inner');
-    if (adInner) adInner.style.height = '';
+    if (adInner) {
+      // Use pixel calculation for better simulator compatibility
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const blackBarHeight = window.innerWidth <= 500 ? 48 : 80;
+      adInner.style.height = `${viewportHeight - blackBarHeight}px`;
+    }
     // Start SVG countdown (sync with video)
     adCountdownPaused = false;
     adCountdownElapsed = 0;
@@ -642,6 +656,11 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         renderAdArrow();
         adLock = false;
+        // Make black bar clickable after countdown ends
+        const blackBar = adContainer.querySelector('.ad-black-bar');
+        if (blackBar) {
+          blackBar.style.cursor = 'pointer';
+        }
       }
     }
     if (adCountdownTimer) cancelAnimationFrame(adCountdownTimer);
@@ -654,9 +673,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (countdownDiv) countdownDiv.style.display = 'none';
     const skipModal = adContainer.querySelector('.ad-skip-modal');
     if (skipModal) skipModal.style.display = 'none';
-    // Remove or comment out divider logic (no longer used)
-    // const divider = adContainer.querySelector('.ad-divider');
-    // if (adHasBeenShown && divider) divider.style.display = 'none';
     if (adCountdownTimer) cancelAnimationFrame(adCountdownTimer);
   }
 
