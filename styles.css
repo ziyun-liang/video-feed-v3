@@ -14,7 +14,7 @@ body {
 }
 
 .video-feed {
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
@@ -24,10 +24,18 @@ body {
 }
 
 .video-container {
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     position: relative;
     scroll-snap-align: start;
+    right: 0;
+    padding: 20px 0 20px 0;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.7) 0%,
+      rgba(0,0,0,0.0) 95%
+    );
+    width: 100%;
 }
 
 video {
@@ -281,21 +289,27 @@ video {
 
 /* --- New Ad Container and Black Bar Styles --- */
 .ad-black-bar {
-    height: 48px;
-    min-height: 48px;
-    max-height: 48px;
-    width: 100vw;
     position: absolute;
-    left: 0;
     bottom: 0;
-    padding-left: 20px;
-    padding-right: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 18px 24px 8px 20px;
     display: flex;
-    align-items: center;
-    background: #111;
+    align-items: flex-end;
+    min-height: 80px;
     z-index: 10;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.12);
+    transition: background-color 0.3s ease;
 }
+
+.ad-black-bar:not(.ad-locked) {
+    cursor: pointer;
+}
+
+.ad-black-bar:not(.ad-locked):hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
 .ad-next-title-bar {
     width: 100vw;
     display: flex;
